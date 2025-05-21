@@ -86,7 +86,7 @@ def pipe_score_check():
 pygame.init()
 screen = pygame.display.set_mode((576, 1024))
 clock = pygame.time.Clock()    
-game_font = pygame.font.Font('Spill/04B_19.ttf',40) 
+game_font = pygame.font.Font('04B_19.ttf', 40) 
 
 # Game variables
 gravity = 0.25
@@ -97,16 +97,16 @@ high_score = 0
 can_score = True
 
 #assets
-bg_surface = pygame.image.load('Spill/assets/background-day.png').convert()
+bg_surface = pygame.image.load('assets/background-day.png').convert()
 bg_surface = pygame.transform.scale2x(bg_surface)
 
-floor_surface = pygame.image.load('Spill/assets/base.png').convert()
+floor_surface = pygame.image.load('assets/base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos = 0
 
-birb_downflap = pygame.transform.scale2x(pygame.image.load('Spill/assets/bluebird-downflap.png').convert_alpha())
-birb_midflap = pygame.transform.scale2x(pygame.image.load('Spill/assets/bluebird-midflap.png').convert_alpha())
-birb_upflap = pygame.transform.scale2x(pygame.image.load('Spill/assets/bluebird-upflap.png').convert_alpha())
+birb_downflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-downflap.png').convert_alpha())
+birb_midflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
+birb_upflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-upflap.png').convert_alpha())
 birb_frames = [birb_downflap,birb_midflap,birb_upflap]
 birb_index = 0
 birb_surface = birb_frames[birb_index]
@@ -119,19 +119,19 @@ pygame.time.set_timer(BIRBFLAP,200)
 # birb_surface = pygame.transform.scale2x(birb_surface)
 # birb_rect = birb_surface.get_rect(center=(100, 512))
 
-pipe_surface = pygame.image.load('Spill/assets/pipe-green.png')
+pipe_surface = pygame.image.load('assets/pipe-green.png')
 pipe_surface = pygame.transform.scale2x(pipe_surface)
 pipe_list = []
 SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE, 1200)
 pipe_height = [400,600,800]
 
-game_over_surface = pygame.transform.scale2x(pygame.image.load('Spill/assets/message.png').convert_alpha())
+game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/message.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center = (288,512))
 
-flap_sound = pygame.mixer.Sound('Spill/audio/wing.wav')
-death_sound = pygame.mixer.Sound('Spill/audio/hit.wav')
-score_sound = pygame.mixer.Sound('Spill/audio/point.wav')
+flap_sound = pygame.mixer.Sound('audio/wing.wav')
+death_sound = pygame.mixer.Sound('audio/hit.wav')
+score_sound = pygame.mixer.Sound('audio/point.wav')
 score_sound_countdown = 100
 
 
